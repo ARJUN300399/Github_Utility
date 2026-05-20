@@ -27,3 +27,19 @@ spec:
             SERVICE-CONSUMER-SERVICE: DUMMY-SERVICE-CONSUMER-SERVICE
 
 
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_GITHUB_RUNNER_20260520

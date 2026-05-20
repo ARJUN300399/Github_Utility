@@ -74,3 +74,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 4
                       tokens_per_fill: 4
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 17
+                      tokens_per_fill: 17
