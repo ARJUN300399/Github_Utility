@@ -81,3 +81,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 29
                       tokens_per_fill: 29
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_GITHUB_RUNNER_BLANKLINE_20260520
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 31
+                      tokens_per_fill: 31
