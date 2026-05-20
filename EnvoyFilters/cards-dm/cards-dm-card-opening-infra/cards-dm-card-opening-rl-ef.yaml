@@ -79,5 +79,5 @@ spec:
                         value: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
                     token_bucket:
                       fill_interval: 1s
-                      max_tokens: 17
-                      tokens_per_fill: 17
+                      max_tokens: 29
+                      tokens_per_fill: 29
