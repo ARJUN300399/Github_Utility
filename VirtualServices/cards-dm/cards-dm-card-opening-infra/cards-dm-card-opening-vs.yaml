@@ -1,0 +1,61 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: cards-dm-card-opening-vs
+  namespace: cards-dm-cmc-{{ .Values.Environment }}-ns
+spec:
+  gateways:
+  - cards-dm-cmc-istio-gw
+  hosts:
+  - '*'
+  http:
+  - match:
+    - uri:
+        exact: /dummyentry
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          add:
+            REQUEST-URL: /dummyentry
+            SERVICE-CONSUMER: DUMMY-SERVICE-CONSUMER
+            SERVICE-CONSUMER-SERVICE: DUMMY-SERVICE-CONSUMER-SERVICE
+
+
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_GITHUB_RUNNER_20260520
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_GITHUB_RUNNER_BLANKLINE_20260520
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_GITHUB_RUNNER_BLANKLINE_20260520
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_GITHUB_RUNNER_BLANKLINE_20260520

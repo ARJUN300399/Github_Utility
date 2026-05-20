@@ -1,0 +1,90 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: cards-dm-card-opening-rl-ef
+  namespace: cards-dm-cmc-{{ .Values.Environment }}-ns
+spec:
+  workloadSelector:
+    labels:
+      app: cards-dm-card-opening-cmc-obrh
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: SIDECAR_INBOUND
+        listener:
+          filterChain:
+            filter:
+              name: envoy.filters.network.http_connection_manager
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: envoy.filters.http.local_ratelimit
+          typed_config:
+            "@type": type.googleapis.com/udpa.type.v1.TypedStruct
+            type_url: type.googleapis.com/envoy.extensions.filters.http.local_ratelimit.v3.LocalRateLimit
+            value:
+              stat_prefix: http_local_rate_limiter
+    - applyTo: HTTP_ROUTE
+      match:
+        context: SIDECAR_INBOUND
+        routeConfiguration:
+          vhost:
+            name: inbound|http|8080
+            route:
+              action: ANY
+      patch:
+        operation: MERGE
+        value:
+          route:
+            rate_limits:
+              - actions:
+                  - request_headers:
+                      header_name: REQUEST-URL
+                      descriptor_key: path
+          typed_per_filter_config:
+            envoy.filters.http.local_ratelimit:
+              "@type": type.googleapis.com/udpa.type.v1.TypedStruct
+              type_url: type.googleapis.com/envoy.extensions.filters.http.local_ratelimit.v3.LocalRateLimit
+              value:
+                stat_prefix: http_local_rate_limiter
+                token_bucket:
+                  max_tokens: 100
+                  tokens_per_fill: 100
+                  fill_interval: 1s
+                filter_enabled:
+                  runtime_key: local_rate_limit_enabled
+                  default_value:
+                    numerator: 100
+                    denominator: HUNDRED
+                filter_enforced:
+                  runtime_key: local_rate_limit_enforced
+                  default_value:
+                    numerator: 100
+                    denominator: HUNDRED
+                response_headers_to_add:
+                  - append: false
+                    header:
+                      key: x-local-rate-limit
+                      value: "true"
+                descriptors:
+                  - entries:
+                      - key: path
+                        value: /dummyentry
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 4
+                      tokens_per_fill: 4
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_GITHUB_RUNNER_20260520
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 29
+                      tokens_per_fill: 29
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_GITHUB_RUNNER_BLANKLINE_20260520
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 31
+                      tokens_per_fill: 31
