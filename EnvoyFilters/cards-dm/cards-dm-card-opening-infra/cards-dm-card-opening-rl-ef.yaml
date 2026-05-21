@@ -102,3 +102,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 41
                       tokens_per_fill: 41
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONC_20260521123856961_five_U4
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 44
+                      tokens_per_fill: 44
