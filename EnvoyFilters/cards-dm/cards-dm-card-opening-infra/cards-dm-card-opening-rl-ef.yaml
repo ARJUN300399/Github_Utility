@@ -88,3 +88,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 31
                       tokens_per_fill: 31
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONC_20260521123837175_single_U1
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 41
+                      tokens_per_fill: 41
