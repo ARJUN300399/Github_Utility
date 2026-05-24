@@ -116,3 +116,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 79
                       tokens_per_fill: 79
+                  - entries:
+                      - key: path
+                        value: /api-gateway/cards/card-opening/CODEX_CONTENTS_APIGW_20260524202856
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 62
+                      tokens_per_fill: 62
