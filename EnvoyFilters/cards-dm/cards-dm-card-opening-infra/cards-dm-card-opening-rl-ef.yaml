@@ -172,3 +172,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 84
                       tokens_per_fill: 84
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/v2/Iam_testing_the_content_API
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 10
+                      tokens_per_fill: 10
