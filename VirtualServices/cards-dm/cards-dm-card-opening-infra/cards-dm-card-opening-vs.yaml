@@ -155,3 +155,19 @@ spec:
             REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U2
             SERVICE-CONSUMER: HDFC_SOA
             SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent2_20260524202856_U2
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U1
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U1
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent2_20260524202856_U1
