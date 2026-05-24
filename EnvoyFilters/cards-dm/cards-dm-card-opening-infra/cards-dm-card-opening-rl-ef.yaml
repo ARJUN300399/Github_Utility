@@ -177,5 +177,5 @@ spec:
                         value: /cards/card-opening/v2/Iam_testing_the_content_API
                     token_bucket:
                       fill_interval: 1s
-                      max_tokens: 10
-                      tokens_per_fill: 10
+                      max_tokens: 12
+                      tokens_per_fill: 12
