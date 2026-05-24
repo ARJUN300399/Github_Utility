@@ -151,3 +151,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 85
                       tokens_per_fill: 85
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U1
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 81
+                      tokens_per_fill: 81
