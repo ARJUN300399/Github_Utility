@@ -59,3 +59,195 @@ spec:
             REQUEST-URL: /cards/card-opening/CODEX_GITHUB_RUNNER_BLANKLINE_20260520
             SERVICE-CONSUMER: HDFC_SOA
             SERVICE-CONSUMER-SERVICE: CODEX_GITHUB_RUNNER_BLANKLINE_20260520
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONC_20260521123837175_single_U1
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONC_20260521123837175_single_U1
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONC_20260521123837175_single_U1
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONC_20260521123847607_two_U1
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONC_20260521123847607_two_U1
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONC_20260521123847607_two_U1
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONC_20260521123856961_five_U4
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONC_20260521123856961_five_U4
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONC_20260521123856961_five_U4
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_ADD_20260524202856
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_ADD_20260524202856
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_REGRESSION
+  - match:
+    - uri:
+        exact: /api-gateway/cards/card-opening/CODEX_CONTENTS_APIGW_20260524202856
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /api-gateway/cards/card-opening/CODEX_CONTENTS_APIGW_20260524202856
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_APIGW
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U2
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U2
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent2_20260524202856_U2
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U1
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U1
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent2_20260524202856_U1
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U2
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U2
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent5_20260524202856_U2
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U5
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U5
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent5_20260524202856_U5
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U1
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U1
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent5_20260524202856_U1
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U3
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U3
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent5_20260524202856_U3
+  - match:
+    - uri:
+        exact: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U4
+    rewrite:
+      uri: /cards-dm-card-opening-cmc-obrh-services/route/dispatch
+    route:
+    - destination:
+        host: cards-dm-card-opening-svc
+        port:
+          number: 8080
+      headers:
+        request:
+          set:
+            REQUEST-URL: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U4
+            SERVICE-CONSUMER: HDFC_SOA
+            SERVICE-CONSUMER-SERVICE: CODEX_CONTENTS_concurrent5_20260524202856_U4

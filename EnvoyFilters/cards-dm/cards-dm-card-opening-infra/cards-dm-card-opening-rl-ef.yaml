@@ -88,3 +88,87 @@ spec:
                       fill_interval: 1s
                       max_tokens: 31
                       tokens_per_fill: 31
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONC_20260521123837175_single_U1
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 41
+                      tokens_per_fill: 41
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONC_20260521123847607_two_U1
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 41
+                      tokens_per_fill: 41
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONC_20260521123856961_five_U4
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 44
+                      tokens_per_fill: 44
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_ADD_20260524202856
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 79
+                      tokens_per_fill: 79
+                  - entries:
+                      - key: path
+                        value: /api-gateway/cards/card-opening/CODEX_CONTENTS_APIGW_20260524202856
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 62
+                      tokens_per_fill: 62
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U2
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 82
+                      tokens_per_fill: 82
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent2_20260524202856_U1
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 81
+                      tokens_per_fill: 81
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U2
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 82
+                      tokens_per_fill: 82
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U5
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 85
+                      tokens_per_fill: 85
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U1
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 81
+                      tokens_per_fill: 81
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U3
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 83
+                      tokens_per_fill: 83
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_concurrent5_20260524202856_U4
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 84
+                      tokens_per_fill: 84
