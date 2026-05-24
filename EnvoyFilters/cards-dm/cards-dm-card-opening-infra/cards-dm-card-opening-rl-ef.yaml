@@ -114,5 +114,5 @@ spec:
                         value: /cards/card-opening/CODEX_CONTENTS_ADD_20260524202856
                     token_bucket:
                       fill_interval: 1s
-                      max_tokens: 61
-                      tokens_per_fill: 61
+                      max_tokens: 79
+                      tokens_per_fill: 79
