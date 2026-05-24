@@ -109,3 +109,10 @@ spec:
                       fill_interval: 1s
                       max_tokens: 44
                       tokens_per_fill: 44
+                  - entries:
+                      - key: path
+                        value: /cards/card-opening/CODEX_CONTENTS_ADD_20260524202856
+                    token_bucket:
+                      fill_interval: 1s
+                      max_tokens: 61
+                      tokens_per_fill: 61
